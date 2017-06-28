@@ -1,0 +1,3 @@
+﻿<#@ template language="C#v3.5" #>
+<#@ property name="Argument" type="System.String" processor="PropertyProcessor" editor="System.Object" converter="System.Object" #>
+This is the argument: '<#= Argument #>'

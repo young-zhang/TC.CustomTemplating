@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="TC.CustomTemplating.TemplateArgumentDirectiveProcessor">
+    <Position X="0.5" Y="6" Width="3" />
+    <Members>
+      <Field Name="argumentInfos" Hidden="true" />
+      <Field Name="argumentNameConverter" Hidden="true" />
+      <Field Name="argumentNameEditor" Hidden="true" />
+      <Field Name="argumentNameName" Hidden="true" />
+      <Field Name="argumentNameType" Hidden="true" />
+      <Method Name="FinishProcessingRun" Hidden="true" />
+      <Method Name="GetArgument" Hidden="true" />
+      <Method Name="GetClassCodeForProcessingRun" Hidden="true" />
+      <Method Name="GetImportsForProcessingRun" Hidden="true" />
+      <Method Name="GetPostInitializationCodeForProcessingRun" Hidden="true" />
+      <Method Name="GetPreInitializationCodeForProcessingRun" Hidden="true" />
+      <Method Name="GetReferencesForProcessingRun" Hidden="true" />
+      <Method Name="GetTypeArgument" Hidden="true" />
+      <Method Name="IsDirectiveSupported" Hidden="true" />
+      <Field Name="methodGetArgument" Hidden="true" />
+      <Method Name="NormalizeType" Hidden="true" />
+      <Field Name="options" Hidden="true" />
+      <Method Name="ProcessDirective" Hidden="true" />
+      <Field Name="provider" Hidden="true" />
+      <Method Name="StartProcessingRun" Hidden="true" />
+      <Field Name="typeNameUITypeEditor" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="TC.CustomTemplating.TemplateArgumentDirectiveProcessor.ArgumentInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TemplateArgumentDirectiveProcessor.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAEAQTAAABABAAAAAIAQAAEAoAAAABQAQAAECQABAA=</HashCode>
+      <FileName>TemplateArgumentDirectiveProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.CustomTemplating.Host" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3" Width="4.75" />
+    <Members>
+      <Field Name="compilationErrors" Hidden="true" />
+      <Method Name="GetHostOption" Hidden="true" />
+      <Method Name="Initialize" Hidden="true" />
+      <Method Name="LoadIncludeText" Hidden="true" />
+      <Method Name="LogErrors" Hidden="true" />
+      <Method Name="OnTemplateCompiled" Hidden="true" />
+      <Field Name="optionCacheAssemblies" Hidden="true" />
+      <Field Name="propertyProcessorName" Hidden="true" />
+      <Method Name="ProvideTemplatingAppDomain" Hidden="true" />
+      <Method Name="ResolveAssemblyReference" Hidden="true" />
+      <Method Name="ResolveDirectiveProcessor" Hidden="true" />
+      <Method Name="ResolveParameterValue" Hidden="true" />
+      <Method Name="ResolvePath" Hidden="true" />
+      <Method Name="SetFileExtension" Hidden="true" />
+      <Method Name="SetOutputEncoding" Hidden="true" />
+      <Property Name="StandardAssemblyReferences" Hidden="true" />
+      <Property Name="StandardImports" Hidden="true" />
+      <Property Name="TemplateFile" Hidden="true" />
+      <Field Name="transformer" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAgAABAABRAIEwAUACAAAAACIFAAAAIIAAAAAAACAgg=</HashCode>
+      <FileName>Host.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.255" />
+  </Class>
+  <Class Name="TC.CustomTemplating.TextTransformer">
+    <Position X="7.5" Y="0.5" Width="4.75" />
+    <Members>
+      <Field Name="instance" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="TC.CustomTemplating.TextTransformer.CurrentDomainTextTransformer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TextTransformer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAQAAABACAAAQAAAAAAAAAA=</HashCode>
+      <FileName>TextTransformer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Host" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TC.CustomTemplating.TemplateArgument">
+    <Position X="4" Y="4.5" Width="3" />
+    <Members>
+      <Method Name="TemplateArgument" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>TemplateArgument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.CustomTemplating.TextTransformationException" Collapsed="true">
+    <Position X="3.75" Y="6.5" Width="4.75" />
+    <Members>
+      <Field Name="compilationError" Hidden="true" />
+      <Method Name="GetObjectData" Hidden="true" />
+      <Method Name="TextTransformationException" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAIAAAAAAAQA=</HashCode>
+      <FileName>TextTransformationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.CustomTemplating.DomainTextTransformer">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <Members>
+      <Method Name="~DomainTextTransformer" Hidden="true" />
+      <Method Name="AddAssemblyReference" Hidden="true" />
+      <Field Name="appDomain" Hidden="true" />
+      <Field Name="assemblyReferences" Hidden="true" />
+      <Field Name="assemblyReferencesLock" Hidden="true" />
+      <Method Name="CheckAutoRecycle" Hidden="true" />
+      <Method Name="CreateNewDomain" Hidden="true" />
+      <Field Name="defaultRecycleCount" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="domainCounter" Hidden="true" />
+      <Method Name="Initialize" Hidden="true" />
+      <Field Name="recycleCount" Hidden="true" />
+      <Method Name="StartTransformation" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAgYBAAIACBAAYAAEQAAAAEAAAFAAAAAACAAQAAAAAA=</HashCode>
+      <FileName>DomainTextTransformer.cs</FileName>
+      <NewMemberFileName>SecuredDomainTextTransformer.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TC.CustomTemplating.TemplateArgumentCollection" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TemplateArgumentCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.CustomTemplating.TextTransformerBase">
+    <Position X="4" Y="0.5" Width="3.25" />
+    <Members>
+      <Property Name="AppDomain" Hidden="true" />
+      <Property Name="AssemblyReferences" Hidden="true" />
+      <Field Name="host" Hidden="true" />
+      <Method Name="StartTransformation" Hidden="true" />
+      <Method Name="TextTransformerBase" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAIAAQAAAAQAAAAACAAAACgAAAAAAAA=</HashCode>
+      <FileName>TextTransformerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

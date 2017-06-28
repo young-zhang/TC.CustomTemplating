@@ -1,0 +1,8 @@
+﻿<#@ template language="C#v3.5" #>
+<#@ property name="Argument1" type="System.String" processor="PropertyProcessor" #>
+<#@ property name="Argument2" type="System.String" processor="PropertyProcessor" #>
+<#@ property name="Argument3" type="System.String" processor="PropertyProcessor" #>
+This is the argument: 
+'<#= Argument1 #>'
+'<#= Argument2 #>'
+'<#= Argument3 #>'

@@ -1,0 +1,31 @@
+﻿<#@ template hostspecific="true" debug="true" language="C#v3.5" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="TC.CustomTemplating.IntegrationTests.Model" #>
+<#@ property processor="PropertyProcessor" type="ClassDefinition" name="Class" #>
+using System;
+
+namespace <#= Class.Namespace #>
+{
+    /// <summary>
+    /// Summery description for '<#= Class.Name #>'
+    /// </summary>
+    public class <#= Class.Name #>
+    {
+<#		
+        foreach (var property in Class.Properties)
+        {
+#>
+        private <#= property.Type.FullName #> <#= property.FieldName #>;
+
+        public <#= property.Type.FullName #> <#= property.Name #>
+        {
+            get { return <#= property.FieldName #>; }
+            set { <#= property.FieldName #> = value; }
+        }
+		
+<#		
+		}
+#>
+    }
+}

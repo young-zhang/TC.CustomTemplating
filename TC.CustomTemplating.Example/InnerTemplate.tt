@@ -1,0 +1,2 @@
+﻿Current date & time: <#= DateTime.Now #>
+

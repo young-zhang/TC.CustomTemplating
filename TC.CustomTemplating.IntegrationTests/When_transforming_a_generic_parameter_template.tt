@@ -1,0 +1,8 @@
+﻿<#@ template language="C#v3.5" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ property name="Argument" type="Dictionary<int, List<string>>" processor="PropertyProcessor" editor="System.Object" converter="System.Object" #>
+<# foreach(int key in Argument.Keys) { #>
+Key: <#= key #>
+<# foreach(string value in Argument[key]) { #>
+  Value; <#= value #>
+<# }} #>

@@ -1,0 +1,12 @@
+
+private MyCustomType _MyCustomName;
+
+[System.ComponentModel.EditorAttribute(typeof(MyCustomEditor), typeof(System.Drawing.Design.UITypeEditor))]
+[System.ComponentModel.TypeConverter(typeof(MyCustomConverter))]
+public virtual MyCustomType MyCustomName
+{
+        get
+        {
+                return this._MyCustomName;
+        }
+}

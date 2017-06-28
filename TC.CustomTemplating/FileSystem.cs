@@ -1,0 +1,86 @@
+// CustomTemplating Library // www.timcools.net - Copyleft 2009 - Licensed under GNU LGPL v3.0
+/////////////////////////////
+
+using System.IO;
+using System.Reflection;
+
+namespace TC.CustomTemplating
+{
+    /// <summary>
+    /// Responsible for accessing the FileSystem.
+    /// </summary>
+    internal class FileSystem : IFileSystem
+    {
+        #region properties
+
+        /// <summary>
+        /// Gets the location of the entry assembly.
+        /// </summary>
+        /// <value>The entry assembly location.</value>
+        public string EntryAssemblyLocation
+        {
+            get
+            {
+                var assembly = Assembly.GetEntryAssembly();
+                return assembly != null && !assembly.IsDynamic() ? assembly.Location : null;
+            }
+        }
+
+        #endregion
+
+        #region methods
+
+        /// <summary>
+        /// Reads all text from a text file.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <returns></returns>
+        public string ReadAllText(string path)
+        {
+            return File.ReadAllText(path);
+        }
+
+        /// <summary>
+        /// Combines the specified path with the name.
+        /// </summary>
+        /// <param name="path1">The path1.</param>
+        /// <param name="path2">The path2.</param>
+        /// <returns></returns>
+        public string Combine(string path1, string path2)
+        {
+            return Path.Combine(path1, path2);
+        }
+
+        /// <summary>
+        /// Returns whether the file exists.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <returns></returns>
+        public bool FileExists(string path)
+        {
+            return File.Exists(path);
+        }
+
+        /// <summary>
+        /// Determines whether the path of the specified file is rooted.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public bool IsPathRooted(string path)
+        {
+            return Path.IsPathRooted(path);
+        }
+
+        /// <summary>
+        /// Gets the name of the directory.
+        /// </summary>
+        /// <param name="fileName">Name of the file.</param>
+        /// <returns></returns>
+        public string GetDirectoryName(string fileName)
+        {
+            return Path.GetDirectoryName(fileName);
+        }
+
+        #endregion
+    }
+}

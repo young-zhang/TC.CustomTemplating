@@ -1,0 +1,2 @@
+﻿<#@ template hostspecific="true" debug="true" language="C#v3.5" #>
+<#@ import namespace="Some invalid namespaces" #>

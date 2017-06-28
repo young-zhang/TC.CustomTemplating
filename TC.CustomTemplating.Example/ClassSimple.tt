@@ -1,0 +1,28 @@
+﻿<#@ template hostspecific="true" language="C#v3.5" #>
+<#@ property name="ClassName" type="System.String" 
+			 processor="PropertyProcessor" #>
+<#@ property name="FieldName" type="System.String" 
+             processor="PropertyProcessor" #>
+<#@ property name="PropertyName" type="System.String" 
+             processor="PropertyProcessor" #>
+using System;
+
+namespace Example.Generated
+{
+    public class <#= ClassName #>
+    {
+        private string <#= FieldName #>;
+
+        public string <#= PropertyName #>
+        {
+            get { return <#= FieldName #>; }
+            set { <#= FieldName #> = value; }
+        }
+    }
+}
+
+
+<# 	… #>	Statement Code 	
+<#= … #>	Expression		
+<#@	… #>	Directive
+<#+ … #>	Feature Code

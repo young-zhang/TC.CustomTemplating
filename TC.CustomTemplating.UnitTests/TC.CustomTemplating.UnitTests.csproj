@@ -1,0 +1,172 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{435498DC-DE98-4ECC-9360-F4B8247272B3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TC.CustomTemplating.UnitTests</RootNamespace>
+    <AssemblyName>TC.CustomTemplating.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>TC.CustomTemplating.UnitTests.snk</AssemblyOriginatorKeyFile>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gallio, Version=3.0.6.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Gallio.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit, Version=3.0.6.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\MbUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextTemplating, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq, Version=3.1.416.3, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArgumentInfoSpecifications.cs\When_getting.cs" />
+    <Compile Include="ArgumentInfoSpecifications.cs\When_setting_Name.cs" />
+    <Compile Include="AssemblyExtensionsSpecifications\When_checking_whether_an_assembly_is_dynamic.cs" />
+    <Compile Include="ClassDefinitionEventArgsSpecifications\When_constructing.cs" />
+    <Compile Include="DomainTextTransformerSpecifications\When_transforming_a_single_null_value_parameter_template.cs" />
+    <Compile Include="DomainTextTransformerSpecifications\When_transforming_with_auto_recycle.cs" />
+    <Compile Include="DomainTextTransformerSpecifications\When_transforming_multiple_parameter_template.cs" />
+    <Compile Include="DomainTextTransformerSpecifications\When_transforming_a_single_parameter_template.cs" />
+    <Compile Include="DomainTextTransformerSpecifications\When_disposing.cs" />
+    <Compile Include="DomainTextTransformerSpecifications\When_constructing_with_arguments.cs" />
+    <Compile Include="DomainTextTransformerSpecifications\When_transforming_a_parameterless_template.cs" />
+    <Compile Include="DomainTextTransformerSpecifications\When_recyling.cs" />
+    <Compile Include="DomainTextTransformerSpecifications\When_constructing_without_arguments_it_should_succeed.cs" />
+    <Compile Include="FileLoaderSpecifications\When_loading_a_non_existing_file.cs" />
+    <Compile Include="FileLoaderSpecifications\When_loading_an_existing_file.cs" />
+    <Compile Include="FileSystemSpecifications\EntryAssemblyRunnner.cs" />
+    <Compile Include="FileSystemSpecifications\When.cs" />
+    <Compile Include="FileSystemSpecifications\When_constructing.cs" />
+    <EmbeddedResource Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_with_single_argument_Class.code" />
+    <Compile Include="HostSpecifications\When_finished_with_errors.cs" />
+    <Compile Include="HostSpecifications\When_finished.cs" />
+    <Compile Include="HostSpecifications\When_getting_StandardAssemblyReferences.cs" />
+    <Compile Include="HostSpecifications\When_initialized.cs" />
+    <Compile Include="HostSpecifications\When_resolving_directive_processor.cs" />
+    <Compile Include="HostSpecifications\When_providing_templating_AppDomain.cs" />
+    <Compile Include="HostSpecifications\When_resolving_assembly.cs" />
+    <Compile Include="HostSpecifications\When_resolving_path.cs" />
+    <Compile Include="HostSpecifications\When_loading_include_text.cs" />
+    <Compile Include="HostSpecifications\When.cs" />
+    <Compile Include="HostSpecifications\When_constructed.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When_normalizing.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_with_full_qualified_type_argument.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_Base.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_with_multiple_arguments.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_with_single_argument.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_without_argument.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When_finishing_processing_run.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When_starting_processing_run.cs" />
+    <Compile Include="TemplateArgumentDirectiveProcessorSpecifications\When_constructing.cs" />
+    <Compile Include="TemplateResourcesSpecifications\When_getting_a_templare_from_embedded_resource.cs" />
+    <Compile Include="TemplateSpecifications\When_getting_assembly_references.cs" />
+    <Compile Include="TemplateSpecifications\TemplateTest.cs" />
+    <Compile Include="TemplateSpecifications\When_constructing.cs" />
+    <Compile Include="TemplateSpecifications\When_getting_path.cs" />
+    <Compile Include="TemplateSpecifications\When_setting_path.cs" />
+    <Compile Include="TemplateSpecifications\When_transforming_a_parameterless_template.cs" />
+    <Compile Include="TemplateSpecifications\When_transforming_a_single_parameter_template.cs" />
+    <Compile Include="TemplateSpecifications\When_transforming_multiple_parameter_template.cs" />
+    <Compile Include="TestBase.cs" />
+    <Compile Include="TextTransformationExceptionSpecifications\When_constructing_with_errors_and_template_class.cs" />
+    <Compile Include="TextTransformerBaseSpecifications\When_a_class_definition_is_generated.cs" />
+    <Compile Include="TextTransformerSpecifications\When_getting.cs" />
+    <Compile Include="HostSpecifications\Constructor.cs" />
+    <Compile Include="HostSpecifications\When_getting_host_options.cs" />
+    <Compile Include="PathResolverSpecifications\When_constructing.cs" />
+    <Compile Include="PathResolverSpecifications\When_include_text_is_loaded.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLocatorSpecifications\When_resolving_unknown_service.cs" />
+    <Compile Include="ServiceLocatorSpecifications\When_resolving_host.cs" />
+    <Compile Include="TemplateArgumentSpecifications\When_constructing.cs" />
+    <Compile Include="TextTransformationExceptionSpecifications\When_serializing.cs" />
+    <Compile Include="TextTransformationExceptionSpecifications\When_deserializing.cs" />
+    <Compile Include="TextTransformerBaseSpecifications\When_constructing.cs" />
+    <Compile Include="TextTransformerBaseSpecifications\When_transforming_a_single_parameter_template_with_null.cs" />
+    <Compile Include="TextTransformerBaseSpecifications\When_transforming_multiple_parameter_template_with_null.cs" />
+    <Compile Include="TextTransformerBaseSpecifications\When_getting.cs" />
+    <Compile Include="TextTransformerBaseSpecifications\When_transforming_multiple_parameter_template.cs" />
+    <Compile Include="TextTransformerBaseSpecifications\When_transforming_a_single_parameter_template.cs" />
+    <Compile Include="TextTransformerBaseSpecifications\TextTransformerImplementation.cs" />
+    <Compile Include="TextTransformerBaseSpecifications\When_transforming_a_parameterless_template.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TC.CustomTemplating\TC.CustomTemplating.csproj">
+      <Project>{54EB2579-A0DE-426C-9C8D-740E3A9B3530}</Project>
+      <Name>TC.CustomTemplating</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TC.CustomTemplating.UnitTests.snk" />
+    <EmbeddedResource Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_with_full_qualified_type_argument_Initialization.code" />
+    <EmbeddedResource Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_with_full_qualified_type_argument_Class.code" />
+    <EmbeddedResource Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_with_multiple_arguments_Class.code" />
+    <EmbeddedResource Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_with_multiple_arguments_Initialization.code" />
+    <EmbeddedResource Include="TemplateArgumentDirectiveProcessorSpecifications\When_processing_with_single_argument_Initialization.code" />
+    <EmbeddedResource Include="TemplateResourcesSpecifications\Example.tt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

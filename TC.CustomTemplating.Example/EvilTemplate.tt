@@ -1,0 +1,2 @@
+﻿<#@ template language="C#v3.5" #>
+<#@ property name="Argument" type="System.String" processor="PropertyProcessor" #>

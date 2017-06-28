@@ -1,0 +1,35 @@
+﻿using System;
+
+namespace TC.CustomTemplating.Example.Generated
+{
+    /// <summary>
+    /// Summery description for 'TestClass'
+    /// </summary>
+    public class TestClass
+    {
+        private System.String name;
+
+        public System.String Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+		
+        private System.Int32 lenght;
+
+        public System.Int32 Lenght
+        {
+            get { return lenght; }
+            set { lenght = value; }
+        }
+		
+        private System.Int32 l;
+
+        public System.Int32 L
+        {
+            get { return l; }
+            set { l = value; }
+        }
+		
+    }
+}

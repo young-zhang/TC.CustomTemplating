@@ -1,0 +1,1 @@
+this._MyCustomName = ((MyCustomType)(System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("MyCustomName")));

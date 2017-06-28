@@ -1,0 +1,13 @@
+﻿<#@ template language="C#v3.5" #>
+<#@ import namespace = "System.Globalization" #>
+
+Current date & time: <#= FormatDate(DateTime.Now) #>
+Previous Week: <#= FormatDate(DateTime.Now.Add(TimeSpan.FromDays(-7))) #>
+Next Week: <#= FormatDate(DateTime.Now.Add(TimeSpan.FromDays(7))) #>
+
+<#+
+private string FormatDate(DateTime date)
+{
+    return date.ToString("D", CultureInfo.GetCultureInfo("nl-be"));
+}
+#>

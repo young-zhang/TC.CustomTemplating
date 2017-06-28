@@ -1,0 +1,86 @@
+﻿<Window x:Class="TC.CustomTemplating.Example.Wpf.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit"
+        Title="Custom Template Transformation Studio" Height="600" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="4">
+        	<TabItem Header="Template" x:Name="tabItemTemplate">
+        		<Grid>
+        			<TextBox x:Name="textBoxTemplate" Margin="4,5,4,30" Text="{Binding Path=Template, Mode=TwoWay}" MaxLines="9999" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+        		</Grid>
+        	</TabItem>
+        	<TabItem Header="Arguments" x:Name="tabItemArguments">
+        		<Controls:DataGrid ItemsSource="{Binding Path=Arguments}" AutoGenerateColumns="False">
+        			<Controls:DataGrid.Columns>
+        				<Controls:DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" Width="*" />
+        				<Controls:DataGridTextColumn Header="Value" Binding="{Binding Path=Value}" Width="*" />
+        			</Controls:DataGrid.Columns>
+        		</Controls:DataGrid>
+        	</TabItem>
+        	<TabItem x:Name="tabItemOutput" Header="Output">
+        		<TextBox x:Name="textBoxOutput" Text="{Binding Path=Output, Mode=OneWay}" Margin="4" IsReadOnly="True" />
+        	</TabItem>
+        	<TabItem x:Name="tabItemErrors" Header="Errors">
+        		<Controls:DataGrid ItemsSource="{Binding Path=CompilerErrors, Mode=OneWay}" IsReadOnly="True" AutoGenerateColumns="False">
+        			<Controls:DataGrid.Columns>
+        				<Controls:DataGridTextColumn Header="Line" Binding="{Binding Path=Line}" Width="60" />
+        				<Controls:DataGridTextColumn Header="Column" Binding="{Binding Path=Column}" Width="60" />
+        				<Controls:DataGridTextColumn Header="Number" Binding="{Binding Path=ErrorNumber}" Width="105" />
+        				<Controls:DataGridTextColumn Header="Description" Binding="{Binding Path=ErrorText}" Width="*" />
+        			</Controls:DataGrid.Columns>
+        		</Controls:DataGrid>
+        	</TabItem>
+        	<TabItem Header="Compiled Template" x:Name="tabItemCompiledTemplate">
+        		<TextBox x:Name="textBoxCompiledTemplate" Text="{Binding Path=CompiledTemplate, Mode=OneWay}" Margin="4" IsReadOnly="True" />
+        	</TabItem>
+        </TabControl>
+
+        <Button x:Name="buttonTransform" Margin="4,4,4,4" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="22" Width="64" Content="Transform" Click="buttonTransform_Click" />
+        <Button x:Name="buttonClear" Margin="4,4,4,4" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="22" Width="64" Content="Clear" Click="buttonClear_Click" />
+
+        <Grid Grid.Row="2">
+    		<Grid.ColumnDefinitions>
+    			<ColumnDefinition Width="*" />
+    			<ColumnDefinition Width="*" />
+    		</Grid.ColumnDefinitions>
+
+            <GroupBox Header="Current" Margin="4">
+    			<DockPanel>
+    				<Grid DockPanel.Dock="Top" Margin="4" Height="20">
+    					<StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Stretch">
+    						<TextBlock Text="ITextTransform classes: " />
+    						<TextBlock Text="{Binding Path=CurrentDomainClasses.Count}" />
+    					</StackPanel>
+    				</Grid>
+    				<Controls:DataGrid Margin="4" ItemsSource="{Binding Path=CurrentDomainClasses}" IsReadOnly="True" Background="#FFFFFFFF" />
+    			</DockPanel>
+    		</GroupBox>
+    		<GroupBox Grid.Column="1" Margin="4">
+                <GroupBox.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Template Domain: " />
+                        <TextBlock Text="{Binding Path=TemplateDomainName}" />
+                    </StackPanel>
+                </GroupBox.Header>
+    			<DockPanel>
+    				<Grid DockPanel.Dock="Top" Margin="4" Height="20">
+    					<StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Stretch">
+    						<TextBlock Text="ITextTransform classes: " />
+    						<TextBlock Text="{Binding Path=TemplateDomainClasses.Count}" />                            
+    					</StackPanel>
+                        <Button x:Name="buttonTemplateDomainRecycle" HorizontalAlignment="Right" Margin="0,0,68,0" Content="Recycle" Width="64" Click="buttonTemplateDomainRecycle_Click" />
+                        <Button x:Name="buttonTemplateDomain" HorizontalAlignment="Right" Content="{Binding Path=TemplateDomainAction}" Width="64" Click="buttonTemplateDomain_Click" />
+                    </Grid>
+    				<Controls:DataGrid Margin="4" ItemsSource="{Binding Path=TemplateDomainClasses}" IsReadOnly="True" />
+    			</DockPanel>
+    		</GroupBox>
+    	</Grid>
+    </Grid>
+</Window>
